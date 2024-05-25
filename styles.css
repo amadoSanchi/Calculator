@@ -1,0 +1,145 @@
+
+/* || RESET */
+
+* {
+	box-sizing: border-box;	
+	margin: 0;
+	padding: 0;
+}
+
+/* || VARIABLES */
+
+:root {
+    --BLUE: #4285F4;
+    --DARK-GRAY: #DADCE0;
+    --LIGHT-GRAY: #F1F3F4;
+}
+
+/* || BLOCKS */
+
+body {
+    align-items: center;
+    display: flex;
+    font-family: monospace, sans-serif;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+#calculator {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid var(--BLUE);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 500px;
+    padding: 1rem;
+    width: 350px;
+}
+
+#display {
+    border-radius: 5px;
+    border: 2px solid var(--BLUE);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#keyboard {
+    display: grid;
+    flex-grow: 2;
+    grid-template-areas:
+        "z z z y"
+        "a a a y"
+        "b b b y"
+        "c c c y"
+        "d d d y";
+}
+
+/* || ELEMENTS */
+
+/* || keyboard */
+
+#keyboard > * {
+    display: flex;
+}
+
+#keyboard__zerothRow {
+    grid-area: z;
+}
+
+#keyboard__firstRow {
+    grid-area: a;
+}
+
+#keyboard__secondRow {
+    grid-area: b;
+}
+
+#keyboard__thirdRow {
+    grid-area: c;
+}
+
+#keyboard__fourthRow {
+    grid-area: d;
+}
+
+#keyboard__column {
+    grid-area: y;
+    flex-direction: column;
+}
+
+#keyboard span {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0.25rem;
+}
+
+#babbage {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.operator {
+    font-weight: bold;
+}
+
+.number, #dot {
+    background-color: var(--LIGHT-GRAY);
+    border: 2px solid var(--BLUE);
+}
+
+#keyboard__fourthRow .operator {
+    background-color: var(--BLUE);
+    color: white;
+}
+
+#keyboard__zerothRow span, #keyboard__column span {
+    background-color: var(--DARK-GRAY);
+}
+
+/* || display */
+
+#upper-numbers {
+    flex-grow: 1;
+    font-style: italic;
+    padding-right: 0.25rem;
+    position: relative;
+}
+
+#lower-numbers {
+    flex-grow: 3;
+    font-size: 3rem;
+    padding-right: 0.25rem;
+    position: relative;
+}
+
+#upper-numbers span, #lower-numbers span {
+    bottom: 0.25rem;
+    position: absolute;
+    right: 0.25rem;
+}
